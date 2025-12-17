@@ -1,0 +1,39 @@
+.topbar{
+  position: sticky;
+  top:0;
+  z-index: 60;
+  background: rgba(10,12,18,.75);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.topbar__inner{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+}
+.topbar__badge{
+  font-size: 12px;
+  font-weight: 700;
+  color: #04110a;
+  background: var(--accent);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.topbar__text{
+  flex:1;
+  color: rgba(242,244,248,.88);
+  font-size: 13px;
+}
+.topbar__cta{
+  border:none;
+  background: transparent;
+  color: rgba(94,231,255,.95);
+  cursor:pointer;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 12px;
+}
+.topbar__cta:hover{ background: rgba(94,231,255,.10); }

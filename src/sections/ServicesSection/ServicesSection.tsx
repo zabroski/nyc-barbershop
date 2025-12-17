@@ -1,9 +1,10 @@
 // src/sections/ServicesSection.tsx
 import React from "react";
-import { SERVICES } from "../data/content";
-import { formatMoney } from "../utils/format";
-import { scrollToId } from "../utils/scroll";
-import { SectionTitle } from "../components/SectionTitle";
+import { SERVICES } from "../../data/content";
+import { formatMoney } from "../../utils/format";
+import { scrollToId } from "../../utils/scroll";
+import { SectionTitle } from "../../components/SectionTitle/SectionTitle";
+import "./ServicesSection.css";
 
 export function ServicesSection({
   onBook,

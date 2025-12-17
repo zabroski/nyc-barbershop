@@ -1,6 +1,7 @@
 // src/components/Modal.tsx
 import React, { useEffect } from "react";
-import { useLockBodyScroll } from "../hooks/useLockBodyScroll";
+import { useLockBodyScroll } from "../../hooks/useLockBodyScroll";
+import "./Modal.css";
 
 export function Modal({
   open,

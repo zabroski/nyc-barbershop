@@ -1,47 +1,60 @@
 import React, { useMemo, useState } from "react";
-import { SectionTitle } from "../components/SectionTitle";
+import { SectionTitle } from "../../components/SectionTitle/SectionTitle";
+import "./MoneyTransferSection.css";
+
+type TransferProviderId = "moneygram" | "western" | "coris";
 
 type TransferProvider = {
-  id: "moneygram" | "western" | "coris";
+  id: TransferProviderId;
   name: string;
   tagline: string;
   details: string[];
   note?: string;
+  badge: string;
 };
 
 const PROVIDERS: TransferProvider[] = [
   {
     id: "moneygram",
     name: "MoneyGram",
-    tagline: "Fast transfers + cash pickup support.",
+    badge: "Fast",
+    tagline: "Quick transfers + cash pickup support.",
     details: [
-      "Send money in minutes (depending on destination).",
+      "Send money in minutes (depends on destination).",
       "Cash pickup options available.",
-      "Bring a valid ID for in-store transactions.",
+      "Bring a valid government ID for in-store transactions.",
     ],
   },
   {
     id: "western",
     name: "Western Union",
-    tagline: "Global transfer network with convenient pickup.",
+    badge: "Global",
+    tagline: "Worldwide network with convenient pickup.",
     details: [
-      "Send money internationally.",
+      "International transfers supported.",
       "Cash pickup and transfer support in-store.",
-      "We can help you with forms and receipt verification.",
+      "We can help you verify forms + receipts.",
     ],
   },
   {
     id: "coris",
     name: "Coris Bank International",
+    badge: "Bank",
     tagline: "Banking support for select destinations.",
     details: [
       "Assistance for Coris Bank International services.",
-      "Helpful for West Africa corridors (depending on service availability).",
-      "Ask in-store for supported routes and requirements.",
+      "Useful for some West Africa corridors (service dependent).",
+      "Ask in-store for supported routes + requirements.",
     ],
     note: "Availability may vary by destination and partner rules.",
   },
 ];
+
+function ProviderIcon({ id }: { id: TransferProviderId }) {
+  // simple inline “logo” badge (no extra deps)
+  const letter = id === "moneygram" ? "M" : id === "western" ? "W" : "C";
+  return <div className={`providerMark providerMark--${id}`}>{letter}</div>;
+}
 
 function ProviderCard({
   provider,
@@ -59,9 +72,24 @@ function ProviderCard({
       onClick={onSelect}
       aria-pressed={active}
     >
-      <div className="transferCard__top">
-        <div className="transferCard__name">{provider.name}</div>
-        <div className="transferCard__tagline muted">{provider.tagline}</div>
+      <div className="transferCard__head">
+        <div className="transferCard__identity">
+          <ProviderIcon id={provider.id} />
+          <div>
+            <div className="transferCard__nameRow">
+              <div className="transferCard__name">{provider.name}</div>
+              <span className="transferBadge">{provider.badge}</span>
+            </div>
+            <div className="transferCard__tagline muted">
+              {provider.tagline}
+            </div>
+          </div>
+        </div>
+
+        <div className="transferCard__hint">
+          <span className="inlineLink">Details</span>
+          <span className="muted">→</span>
+        </div>
       </div>
 
       <div className="transferCard__bullets">
@@ -72,17 +100,12 @@ function ProviderCard({
           </div>
         ))}
       </div>
-
-      <div className="transferCard__ctaRow">
-        <span className="inlineLink">View details</span>
-        <span className="muted">→</span>
-      </div>
     </button>
   );
 }
 
 export function MoneyTransferSection() {
-  const [activeId, setActiveId] = useState<TransferProvider["id"]>("moneygram");
+  const [activeId, setActiveId] = useState<TransferProviderId>("moneygram");
 
   const active = useMemo(
     () => PROVIDERS.find((p) => p.id === activeId)!,
@@ -93,16 +116,32 @@ export function MoneyTransferSection() {
   const mapsHref =
     "https://www.google.com/maps/search/?api=1&query=123+Lafayette+St+New+York+NY";
 
+  const quickRequirements = useMemo(
+    () => [
+      {
+        title: "Bring ID",
+        desc: "Government-issued ID required for most transfers.",
+      },
+      {
+        title: "Know receiver info",
+        desc: "Full name + destination details help speed things up.",
+      },
+      { title: "Keep receipt", desc: "Useful for verification and tracking." },
+    ],
+    []
+  );
+
   return (
     <section id="transfer" className="section section--alt">
       <div className="container">
         <SectionTitle
           eyebrow="Money Transfer"
           title="Send money while you’re here."
-          desc="Same location as the barbershop—easy, quick, and supported in-store."
+          desc="Same location as the barbershop—fast, convenient, and supported in-store."
         />
 
         <div className="transferGrid">
+          {/* LEFT */}
           <div className="transferLeft">
             <div className="transferCards">
               {PROVIDERS.map((p) => (
@@ -116,8 +155,23 @@ export function MoneyTransferSection() {
             </div>
 
             <div className="card transferInfo">
-              <div className="transferInfo__title">
-                {active.name} — What to bring
+              <div className="transferInfo__top">
+                <div>
+                  <div className="transferInfo__kicker muted">
+                    Selected provider
+                  </div>
+                  <div className="transferInfo__title">
+                    {active.name} <span className="muted">— What to bring</span>
+                  </div>
+                </div>
+
+                <div className="transferInfo__chipRow">
+                  <span className="chip chip--soft">In-store help</span>
+                  <span className="chip chip--soft">Receipt verification</span>
+                  <span className="chip chip--soft">
+                    Cash pickup (where available)
+                  </span>
+                </div>
               </div>
 
               <div className="transferInfo__list">
@@ -148,47 +202,30 @@ export function MoneyTransferSection() {
               </div>
 
               <div className="transferInfo__meta muted">
-                Location: {address} · Mon–Sat 10am–7pm · Sun 11am–5pm
+                Location: {address} · Mon–Sat 10am–10pm · Sun 11am–7pm
               </div>
             </div>
           </div>
 
+          {/* RIGHT */}
           <div className="card transferRight">
             <div className="transferRight__header">
               <div className="transferRight__title">Same place, two needs</div>
               <div className="muted">
-                Get a clean cut and handle a money transfer in one stop.
+                Get a clean cut and handle a transfer in one stop.
               </div>
             </div>
 
             <div className="transferRight__steps">
-              <div className="transferStep">
-                <div className="transferStep__num">1</div>
-                <div>
-                  <div className="strong">Choose a provider</div>
-                  <div className="muted">
-                    MoneyGram, Western Union, or Coris.
+              {quickRequirements.map((s, idx) => (
+                <div key={s.title} className="transferStep">
+                  <div className="transferStep__num">{idx + 1}</div>
+                  <div>
+                    <div className="strong">{s.title}</div>
+                    <div className="muted">{s.desc}</div>
                   </div>
                 </div>
-              </div>
-              <div className="transferStep">
-                <div className="transferStep__num">2</div>
-                <div>
-                  <div className="strong">Bring your ID</div>
-                  <div className="muted">
-                    We’ll guide you through the process.
-                  </div>
-                </div>
-              </div>
-              <div className="transferStep">
-                <div className="transferStep__num">3</div>
-                <div>
-                  <div className="strong">Confirm & keep your receipt</div>
-                  <div className="muted">
-                    Helpful for tracking and verification.
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
 
             <div className="divider" />

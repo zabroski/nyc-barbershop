@@ -1,0 +1,98 @@
+
+/* src/sections/BarbersSection/BarbersSection.css */
+/* Card */
+.barberCard {
+  padding: 16px;
+}
+
+/* Top row */
+.barberCard__top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Barber photo (KEY UPGRADE) */
+.barberPhoto {
+  width: 80px;
+  height: 80px;
+  border-radius: 22px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  background: #111;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.barberPhoto:hover {
+  transform: scale(1.04);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.55);
+}
+
+/* Identity */
+.barberCard__who {
+  flex: 1;
+}
+
+.barberCard__name {
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Badges */
+.badge {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.badge--popular {
+  background: rgba(184, 255, 106, 0.16);
+  border: 1px solid rgba(184, 255, 106, 0.28);
+  color: rgba(184, 255, 106, 0.95);
+}
+
+/* Specialty chips */
+.barberCard__chips {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Actions */
+.barberCard__actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.barberCard__actions .btn {
+  flex: 1 1 160px;
+  min-height: 44px;
+}
+
+/* Tablet */
+@media (min-width: 760px) {
+  .barberPhoto {
+    width: 96px;
+    height: 96px;
+    border-radius: 26px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1100px) {
+  .barberPhoto {
+    width: 112px;
+    height: 112px;
+    border-radius: 30px;
+  }
+}

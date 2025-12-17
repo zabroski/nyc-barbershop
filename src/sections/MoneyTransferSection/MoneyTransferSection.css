@@ -1,0 +1,299 @@
+/* Layout */
+.transferGrid{
+  display:grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+}
+
+.transferLeft{
+  display:grid;
+  gap: 14px;
+}
+
+.transferCards{
+  display:grid;
+  gap: 12px;
+}
+
+/* Provider cards */
+.transferCard{
+  width: 100%;
+  text-align: left;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  padding: 14px;
+  cursor: pointer;
+  transition: transform .15s ease, border-color .15s ease, background .15s ease, box-shadow .15s ease;
+}
+
+.transferCard:hover{
+  transform: translateY(-1px);
+  border-color: rgba(94,231,255,.22);
+  background: rgba(255,255,255,.05);
+  box-shadow: 0 16px 50px rgba(0,0,0,.45);
+}
+
+.transferCard:focus{
+  outline: none;
+  box-shadow: 0 0 0 4px var(--focus);
+}
+
+.transferCard--active{
+  border-color: rgba(184,255,106,.30);
+  background: linear-gradient(180deg, rgba(184,255,106,.10), rgba(255,255,255,.03));
+  box-shadow: 0 22px 60px rgba(0,0,0,.55);
+}
+
+/* Card header */
+.transferCard__head{
+  display:flex;
+  align-items:flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.transferCard__identity{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+
+.providerMark{
+  width: 46px;
+  height: 46px;
+  border-radius: 18px;
+  display:grid;
+  place-items:center;
+  font-weight: 950;
+  letter-spacing: 1px;
+  color: rgba(10,12,18,.95);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 16px 40px rgba(0,0,0,.35);
+}
+
+/* Different “brand” vibes */
+.providerMark--moneygram{
+  background: radial-gradient(120% 120% at 30% 10%, rgba(184,255,106,.92), rgba(184,255,106,.35));
+}
+.providerMark--western{
+  background: radial-gradient(120% 120% at 30% 10%, rgba(94,231,255,.95), rgba(94,231,255,.30));
+}
+.providerMark--coris{
+  background: radial-gradient(120% 120% at 30% 10%, rgba(255,255,255,.85), rgba(255,255,255,.20));
+}
+
+.transferCard__nameRow{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.transferCard__name{
+  font-weight: 950;
+  letter-spacing: -0.2px;
+}
+
+.transferBadge{
+  font-size: 11px;
+  font-weight: 900;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.22);
+  color: rgba(242,244,248,.92);
+}
+
+.transferCard__tagline{
+  margin-top: 2px;
+  font-size: 13px;
+}
+
+.transferCard__hint{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  margin-top: 2px;
+  opacity: .95;
+}
+
+/* Bullet preview */
+.transferCard__bullets{
+  margin-top: 10px;
+  display:grid;
+  gap: 8px;
+  color: rgba(242,244,248,.84);
+}
+
+.transferBullet{
+  display:flex;
+  align-items:flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.transferBullet__dot{
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  margin-top: 4px;
+  background: rgba(184,255,106,.9);
+  box-shadow: 0 0 0 8px rgba(184,255,106,.10);
+}
+
+/* Info card */
+.transferInfo{
+  padding: 16px;
+}
+
+.transferInfo__top{
+  display:grid;
+  gap: 10px;
+}
+
+.transferInfo__kicker{
+  font-size: 12px;
+}
+
+.transferInfo__title{
+  font-weight: 950;
+  font-size: 18px;
+  letter-spacing: -0.2px;
+}
+
+.transferInfo__chipRow{
+  display:flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Details list */
+.transferInfo__list{
+  margin-top: 12px;
+  display:grid;
+  gap: 10px;
+}
+
+.transferInfo__row{
+  display:flex;
+  gap: 10px;
+  align-items:flex-start;
+  color: rgba(242,244,248,.88);
+}
+
+.transferCheck{
+  width: 22px;
+  height: 22px;
+  border-radius: 10px;
+  display:grid;
+  place-items:center;
+  background: rgba(184,255,106,.14);
+  border: 1px solid rgba(184,255,106,.22);
+  color: rgba(184,255,106,.95);
+  flex: 0 0 auto;
+}
+
+/* Actions */
+.transferInfo__actions{
+  margin-top: 14px;
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.transferInfo__meta{
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+/* Right card */
+.transferRight{
+  padding: 16px;
+}
+
+.transferRight__header{
+  display:grid;
+  gap: 6px;
+}
+
+.transferRight__title{
+  font-weight: 950;
+  font-size: 18px;
+  letter-spacing: -0.2px;
+}
+
+.transferRight__steps{
+  margin-top: 12px;
+  display:grid;
+  gap: 10px;
+}
+
+.transferStep{
+  display:flex;
+  gap: 12px;
+  align-items:flex-start;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.04);
+}
+
+.transferStep__num{
+  width: 34px;
+  height: 34px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+  font-weight: 950;
+  color: rgba(10,12,18,.92);
+  background: linear-gradient(180deg, rgba(184,255,106,.85), rgba(94,231,255,.65));
+  border: 1px solid rgba(255,255,255,.18);
+}
+
+.transferRight__footer{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+
+
+/* Responsive */
+@media (min-width: 760px){
+  .transferGrid{ grid-template-columns: 1.2fr .8fr; align-items:start; }
+  .transferCards{ grid-template-columns: 1fr; }
+}
+
+
+
+
+/* Details button inside card header */
+.transferDetailsBtn{
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  color: rgba(242,244,248,.92);
+  padding: 8px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+
+.transferDetailsBtn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.07);
+  border-color: rgba(94,231,255,.22);
+}
+
+.transferDetailsBtn:focus{
+  outline: none;
+  box-shadow: 0 0 0 4px var(--focus);
+}
+
+/* optional wrapper if you want spacing control */
+.transferCardWrap{ display:block; }

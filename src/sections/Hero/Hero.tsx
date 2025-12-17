@@ -1,8 +1,9 @@
 // src/sections/Hero.tsx
 import React from "react";
-import { HERO_IMAGE, STATS } from "../data/content";
-import { formatMoney } from "../utils/format";
-import { scrollToId } from "../utils/scroll";
+import { HERO_IMAGE, STATS } from "../../data/content";
+import { formatMoney } from "../../utils/format";
+import { scrollToId } from "../../utils/scroll";
+import "./Hero.css";
 
 export function Hero({
   onBook,

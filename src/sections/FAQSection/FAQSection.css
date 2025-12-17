@@ -1,0 +1,25 @@
+.faq{ display:grid; gap: 10px; }
+
+.faqItem{
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+}
+.faqItem__q{
+  width:100%;
+  text-align:left;
+  padding: 14px 14px;
+  border:none;
+  background: transparent;
+  color: var(--text);
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: 850;
+}
+.faqItem__a{
+  padding: 0 14px 14px;
+  color: rgba(242,244,248,.80);
+}

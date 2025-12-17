@@ -1,7 +1,8 @@
 // src/sections/FAQSection.tsx
 import React, { useState } from "react";
-import { FAQ } from "../data/content";
-import { SectionTitle } from "../components/SectionTitle";
+import { FAQ } from "../../data/content";
+import { SectionTitle } from "../../components/SectionTitle/SectionTitle";
+import "./FAQSection.css";
 
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);

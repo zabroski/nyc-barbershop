@@ -1,7 +1,8 @@
 // src/components/MobileDrawer.tsx
 import React from "react";
-import { useLockBodyScroll } from "../hooks/useLockBodyScroll";
-import { scrollToId } from "../utils/scroll";
+import { useLockBodyScroll } from "../../hooks/useLockBodyScroll";
+import { scrollToId } from "../../utils/scroll";
+import "./MobileDrawer.css";
 
 export function MobileDrawer({
   open,

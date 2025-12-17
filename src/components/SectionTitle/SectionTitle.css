@@ -1,0 +1,22 @@
+.sectionTitle{ margin-bottom: 18px; }
+.sectionTitle__eyebrow{
+  display:inline-flex;
+  gap:10px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  color: rgba(242,244,248,.82);
+  font-size: 12px;
+  letter-spacing: .4px;
+}
+.sectionTitle__h2{
+  margin: 12px 0 8px;
+  font-size: 28px;
+  letter-spacing: -0.4px;
+}
+.sectionTitle__p{
+  margin: 0;
+  color: rgba(242,244,248,.75);
+  max-width: 70ch;
+}
