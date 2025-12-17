@@ -888,3 +888,173 @@ img {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+
+
+
+
+/* Money Transfer Section */
+.transferGrid{
+  display: grid;
+  gap: 14px;
+}
+
+.transferCards{
+  display: grid;
+  gap: 12px;
+}
+
+.transferCard{
+  text-align: left;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.70);
+  border-radius: 18px;
+  padding: 14px;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.transferCard:hover{
+  transform: translateY(-1px);
+  border-color: rgba(0,0,0,.14);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+.transferCard--active{
+  border-color: rgba(0,0,0,.18);
+  box-shadow: 0 16px 34px rgba(0,0,0,.10);
+  outline: 3px solid rgba(94,231,255,.18);
+}
+
+.transferCard__name{
+  font-weight: 950;
+  letter-spacing: -.2px;
+  font-size: 16px;
+}
+.transferCard__tagline{
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.transferCard__bullets{
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+  color: rgba(20,24,34,.92);
+}
+.transferBullet{
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13px;
+}
+.transferBullet__dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  margin-top: 6px;
+  background: rgba(94,231,255,.9);
+  flex: 0 0 auto;
+}
+
+.transferCard__ctaRow{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.transferInfo{
+  margin-top: 12px;
+  padding: 16px;
+}
+.transferInfo__title{
+  font-weight: 950;
+  font-size: 16px;
+}
+.transferInfo__list{
+  margin-top: 10px;
+  display: grid;
+  gap: 10px;
+}
+.transferInfo__row{
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13.5px;
+  color: rgba(20,24,34,.92);
+}
+.transferCheck{
+  width: 22px;
+  height: 22px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: rgba(184,255,106,.30);
+  border: 1px solid rgba(184,255,106,.45);
+  color: rgba(10,20,10,.95);
+  flex: 0 0 auto;
+}
+
+.transferInfo__actions{
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.transferInfo__meta{
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.transferRight{
+  padding: 16px;
+}
+.transferRight__title{
+  font-weight: 950;
+  font-size: 18px;
+}
+.transferRight__steps{
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+}
+.transferStep{
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.65);
+}
+.transferStep__num{
+  width: 30px;
+  height: 30px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 950;
+  background: rgba(94,231,255,.22);
+  border: 1px solid rgba(94,231,255,.35);
+  color: rgba(10,12,18,.92);
+  flex: 0 0 auto;
+}
+
+.transferRight__footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Desktop layout */
+@media (min-width: 760px){
+  .transferGrid{
+    grid-template-columns: 1.1fr .9fr;
+    align-items: start;
+  }
+  .transferInfo{
+    margin-top: 14px;
+  }
+}

@@ -12,6 +12,7 @@ import { BarbersSection } from "./sections/BarbersSection";
 import { GallerySection } from "./sections/GallerySection";
 import { FAQSection } from "./sections/FAQSection";
 import { ContactSection } from "./sections/ContactSection";
+import { MoneyTransferSection } from "./sections/MoneyTransferSection";
 
 type BookingSeed = { serviceId?: string; barberId?: string };
 
@@ -50,6 +51,7 @@ export default function App() {
         />
         <GallerySection />
         <FAQSection />
+        <MoneyTransferSection />
         <ContactSection onBook={() => openBooking()} />
       </main>
 
