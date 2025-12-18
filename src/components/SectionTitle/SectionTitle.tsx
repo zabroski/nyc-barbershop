@@ -1,5 +1,4 @@
 // src/components/SectionTitle.tsx
-import React from "react";
 import "./SectionTitle.css";
 
 export function SectionTitle({

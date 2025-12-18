@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { HERO_IMAGE, STATS } from "../../data/content";
 import { formatMoney } from "../../utils/format";
 import { scrollToId } from "../../utils/scroll";

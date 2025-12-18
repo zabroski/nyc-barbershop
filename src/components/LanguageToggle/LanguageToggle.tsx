@@ -1,4 +1,3 @@
-import React from "react";
 // Update the import path or import statement to match the actual export
 import { useTranslation } from "react-i18next";
 // or, if your LanguageContext exports a default or named context, use the correct import:

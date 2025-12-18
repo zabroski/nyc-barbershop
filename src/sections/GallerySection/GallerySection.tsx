@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { GALLERY } from "../../data/content";
 import { SectionTitle } from "../../components/SectionTitle/SectionTitle";
 import "./GallerySection.css";

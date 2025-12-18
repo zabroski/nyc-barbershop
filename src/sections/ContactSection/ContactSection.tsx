@@ -1,5 +1,4 @@
 // src/sections/ContactSection.tsx
-import React from "react";
 import { SectionTitle } from "../../components/SectionTitle/SectionTitle";
 import { scrollToId } from "../../utils/scroll";
 import "./ContactSection.css";

@@ -1,5 +1,4 @@
 // src/sections/ServicesSection.tsx
-import React from "react";
 import { SERVICES } from "../../data/content";
 import { formatMoney } from "../../utils/format";
 import { scrollToId } from "../../utils/scroll";

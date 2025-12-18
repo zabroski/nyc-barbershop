@@ -1,5 +1,4 @@
 // src/components/Navbar.tsx
-import React from "react";
 import { scrollToId } from "../../utils/scroll";
 import "./Navbar.css";
 

@@ -1,5 +1,5 @@
 // src/components/BookingForm.tsx
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { BARBERS, SERVICES, TIMES } from "../../data/content";
 import { formatMoney } from "../../utils/format";
 import "./BookingForm.css";

@@ -1,5 +1,5 @@
 // src/sections/FAQSection.tsx
-import React, { useState } from "react";
+import { useState } from "react";
 import { FAQ } from "../../data/content";
 import { SectionTitle } from "../../components/SectionTitle/SectionTitle";
 import "./FAQSection.css";
@@ -11,7 +11,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
       <button
         className="faqItem__q"
         onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
+        aria-expanded={open ? true : false}
       >
         <span>{q}</span>
         <span className="faqItem__icon" aria-hidden="true">
