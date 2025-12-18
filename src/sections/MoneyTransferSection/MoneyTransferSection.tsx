@@ -112,9 +112,9 @@ export function MoneyTransferSection() {
     [activeId]
   );
 
-  const address = "123 Lafayette St, New York, NY";
+  const address = "2273 7th AVE, New York, NY";
   const mapsHref =
-    "https://www.google.com/maps/search/?api=1&query=123+Lafayette+St+New+York+NY";
+    "https://www.google.com/maps/@40.814454,-73.9442016,3a,75y,119.22h,90t/data=!3m7!1e1!3m5!1sgGnZYbfTibTJz7zUxpVy4w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DgGnZYbfTibTJz7zUxpVy4w%26yaw%3D119.22!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D";
 
   const quickRequirements = useMemo(
     () => [
@@ -188,7 +188,7 @@ export function MoneyTransferSection() {
               {active.note && <div className="note">{active.note}</div>}
 
               <div className="transferInfo__actions">
-                <a className="btn" href="tel:+12125550123">
+                <a className="btn" href="tel:+6466730832">
                   Call for availability
                 </a>
                 <a
@@ -237,7 +237,7 @@ export function MoneyTransferSection() {
                   Call and we’ll confirm what’s available.
                 </div>
               </div>
-              <a className="btn btn--primary" href="tel:+12125550123">
+              <a className="btn btn--primary" href="tel:+16466730832">
                 Call now
               </a>
             </div>

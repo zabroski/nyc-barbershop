@@ -35,8 +35,8 @@ export function MobileDrawer({
               ✦
             </div>
             <div className="brand__text">
-              <div className="brand__name">NOHO BARBER CO.</div>
-              <div className="brand__sub">NYC</div>
+              <div className="brand__name">Yentema Salon</div>
+              <div className="brand__sub">Harlem</div>
             </div>
           </div>
           <button className="iconBtn" onClick={onClose} aria-label="Close">
@@ -80,14 +80,14 @@ export function MobileDrawer({
             <button className="btn btn--primary" onClick={onBook}>
               Book an appointment
             </button>
-            <a className="btn" href="tel:+12125550123">
-              Call (212) 555-0123
+            <a className="btn" href="tel:000-000-0000">
+              Call (000) 000-0000
             </a>
           </div>
 
           <div className="drawer__fineprint">
             <div className="muted">Hours</div>
-            <div>Mon–Sat 10am–7pm · Sun 11am–5pm</div>
+            <div>Mon–Sat 10am–10pm · Sun 11am–7pm</div>
           </div>
         </div>
       </div>

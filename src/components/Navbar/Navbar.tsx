@@ -33,7 +33,7 @@ export function Navbar({
             ✦
           </div>
           <div className="brand__text">
-            <div className="brand__name">NOHO BARBER CO.</div>
+            <div className="brand__name">Yentema Salon.</div>
             <div className="brand__sub">NYC · Cuts, Fades, Beard</div>
           </div>
         </div>

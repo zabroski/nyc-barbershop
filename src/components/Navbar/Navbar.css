@@ -33,7 +33,7 @@
   border: 1px solid rgba(255,255,255,.12);
   box-shadow: 0 16px 40px rgba(0,0,0,.35);
 }
-.brand__name{ font-weight: 900; letter-spacing: .9px; font-size: 13px; }
+.brand__name{ font-weight: 900; letter-spacing: .9px; font-size: 22px; }
 .brand__sub{ color: var(--muted); font-size: 12px; margin-top: 2px; }
 
 .nav__links{ display:none; align-items:center; gap:6px; }

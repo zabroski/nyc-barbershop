@@ -14,7 +14,7 @@ export function SectionTitle({
   return (
     <div className="sectionTitle">
       <div className="sectionTitle__eyebrow">{eyebrow}</div>
-      <h2 className="sectionTitle__h2">{title}</h2>
+      {/* <h2 className="sectionTitle__h2">{title}</h2> */}
       <p className="sectionTitle__p">{desc}</p>
     </div>
   );

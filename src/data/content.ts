@@ -1,12 +1,12 @@
 // src/data/content.ts
-import fadeImg from "../assets/gallery/fade.jpg";
-import beardImg from "../assets/gallery/beard.jpg";
-import lineupImg from "../assets/gallery/lineup.jpg";
-import classicImg from "../assets/gallery/classic.jpg";
-import taperImg from "../assets/gallery/taper.jpg";
+import fadeImg from "../assets/gallery/fade.png";
+import beardImg from "../assets/gallery/beard.png";
+import lineupImg from "../assets/gallery/lineup.png";
+import classicImg from "../assets/gallery/classic.png";
+import taperImg from "../assets/gallery/taper.png";
 
 import marcusImg from "../assets/barbers/marcus.jpg";
-import julesImg from "../assets/barbers/jules.jpg";
+import julesImg from "../assets/barbers/jules.png";
 import aminaImg from "../assets/barbers/amina.jpg";
 
 export type Service = {
@@ -61,8 +61,8 @@ export const SERVICES: Service[] = [
   {
     id: "cutbeard",
     name: "Cut + Beard Combo",
-    minutes: 55,
-    priceFrom: 85,
+    minutes: 30,
+    priceFrom: 40,
     description: "Full look: cut, fade, beard sculpt, premium finish.",
     popular: true,
   },
@@ -85,22 +85,22 @@ export const SERVICES: Service[] = [
 export const BARBERS: Barber[] = [
   {
     id: "marcus",
-    name: "Marcus Reed",
-    title: "Master Barber",
+    name: "Luck",
+    title: "",
     image: marcusImg,
-    specialty: ["Skin fades", "Lineups", "Texture work"],
+    specialty: ["Skin fades", "Lineups", "Texture work", "Kids cuts"],
   },
   {
     id: "jules",
-    name: "Jules Santos",
-    title: "Senior Barber",
+    name: "Ange De Dieu",
+    title: "",
     image: julesImg,
     specialty: ["Beards", "Classic cuts", "Kids cuts"],
   },
   {
     id: "amina",
-    name: "Amina Diallo",
-    title: "Barber-Stylist",
+    name: "Rayenemanegre",
+    title: "",
     image: aminaImg,
     specialty: ["Tapers", "Designs", "Detail work"],
   },
@@ -188,7 +188,7 @@ export const GALLERY = [
 ] as const;
 
 export const STATS = [
-  { label: "Avg rating", value: "4.9/5" },
-  { label: "Return clients", value: "71%" },
-  { label: "Typical wait", value: "Under 5 min" },
+  { label: "Avg rating", value: "4.6/5" },
+  { label: "Return clients", value: "89%" },
+  { label: "Typical wait", value: "Under 10 min" },
 ] as const;
