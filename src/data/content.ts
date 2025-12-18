@@ -4,6 +4,7 @@ import beardImg from "../assets/gallery/beard.png";
 import lineupImg from "../assets/gallery/lineup.png";
 import classicImg from "../assets/gallery/classic.png";
 import taperImg from "../assets/gallery/taper.png";
+import classicImgs from "../assets/gallery/classic1.png";
 
 import marcusImg from "../assets/barbers/marcus.jpg";
 import julesImg from "../assets/barbers/jules.png";
@@ -185,6 +186,7 @@ export const GALLERY = [
   { label: "Sharp Lineup", image: lineupImg },
   { label: "Classic Cut", image: classicImg },
   { label: "Taper Fade", image: taperImg },
+  { label: "Classic Cut", image: classicImgs },
 ] as const;
 
 export const STATS = [

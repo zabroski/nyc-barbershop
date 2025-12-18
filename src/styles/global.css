@@ -142,3 +142,40 @@ img{
 
 
 
+
+
+/* language toggle */
+.langToggle {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.langToggle__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.8);
+  color: #e5e7eb;
+}
+
+.langToggle__separator {
+  opacity: 0.7;
+}
+
+.langToggle__label {
+  opacity: 0.6;
+}
+
+/* highlight the active side slightly */
+.langToggle__pill.is-en .langToggle__label:first-child,
+.langToggle__pill.is-fr .langToggle__label:last-child {
+  opacity: 1;
+  color: #f97316;
+}

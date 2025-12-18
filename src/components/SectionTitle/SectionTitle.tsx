@@ -4,7 +4,7 @@ import "./SectionTitle.css";
 
 export function SectionTitle({
   eyebrow,
-  title,
+  // title,
   desc,
 }: {
   eyebrow: string;
