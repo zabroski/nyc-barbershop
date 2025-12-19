@@ -15,6 +15,15 @@ export function MobileDrawer({
   useLockBodyScroll(open);
   if (!open) return null;
 
+  const closeAndScroll = (id: string) => {
+    onClose();
+
+    // Wait for drawer to unmount + body scroll to unlock (important on iOS Safari)
+    requestAnimationFrame(() => {
+      setTimeout(() => scrollToId(id), 0);
+    });
+  };
+
   return (
     <div
       className="drawer drawer--light"
@@ -23,6 +32,7 @@ export function MobileDrawer({
       aria-label="Navigation menu"
     >
       <button
+        type="button"
         className="drawer__backdrop"
         aria-label="Close menu"
         onClick={onClose}
@@ -40,75 +50,68 @@ export function MobileDrawer({
             </div>
           </div>
 
-          <button className="iconBtn" onClick={onClose} aria-label="Close">
+          <button
+            type="button"
+            className="iconBtn"
+            onClick={onClose}
+            aria-label="Close"
+          >
             ✕
           </button>
         </div>
 
         <div className="drawer__links">
           <button
+            type="button"
             className="drawerLink"
-            onClick={() => {
-              onClose();
-              scrollToId("services");
-            }}
+            onClick={() => closeAndScroll("services")}
           >
             Services
           </button>
 
           <button
+            type="button"
             className="drawerLink"
-            onClick={() => {
-              onClose();
-              scrollToId("barbers");
-            }}
+            onClick={() => closeAndScroll("barbers")}
           >
             Barbers
           </button>
 
           <button
+            type="button"
             className="drawerLink"
-            onClick={() => {
-              onClose();
-              scrollToId("gallery");
-            }}
+            onClick={() => closeAndScroll("gallery")}
           >
             Gallery
           </button>
 
-          {/* ✅ NEW: Money Transfer */}
+          {/* ✅ Money Transfer */}
           <button
+            type="button"
             className="drawerLink"
-            onClick={() => {
-              onClose();
-              scrollToId("transfer");
-            }}
+            onClick={() => closeAndScroll("transfer")}
           >
             Money Transfer
           </button>
 
-          {/* <button
-            className="drawerLink"
-            onClick={() => {
-              onClose();
-              scrollToId("faq");
-            }}
-          >
-            FAQ
-          </button> */}
-
           <button
+            type="button"
             className="drawerLink"
-            onClick={() => {
-              onClose();
-              scrollToId("contact");
-            }}
+            onClick={() => closeAndScroll("contact")}
           >
             Contact & Hours
           </button>
 
           <div className="drawer__actions">
-            <button className="btn btn--primary" onClick={onBook}>
+            <button
+              type="button"
+              className="btn btn--primary"
+              onClick={() => {
+                onClose();
+                // optional: open booking after close (same iOS rule)
+                requestAnimationFrame(() => setTimeout(() => onBook(), 0));
+              }}
+            >
               Book an appointment
             </button>
 
