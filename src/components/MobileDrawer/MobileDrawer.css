@@ -1,4 +1,4 @@
-
+/* 
 .drawer{
   position: fixed;
   inset: 0;
@@ -50,4 +50,69 @@
   border: 1px solid rgba(255,255,255,.08);
   background: rgba(255,255,255,.03);
   color: rgba(242,244,248,.78);
+} */
+
+
+
+
+
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.drawer__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
+}
+
+/* Panel must be above backdrop */
+.drawer__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(420px, 88vw);
+  background: #fff;
+  z-index: 1;
+  overflow-y: auto;
+}
+
+/* Header must be positioning context and reserve space for X */
+.drawer__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 64px 16px 16px; /* reserve room for iconBtn */
+  z-index: 2;
+  background: #fff;
+}
+
+/* Mobile-friendly close button */
+.iconBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  background: transparent;
+  border-radius: 999px;
+
+  font-size: 24px;
+  line-height: 1;
+
+  z-index: 10;
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
