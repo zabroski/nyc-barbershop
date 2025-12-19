@@ -32,10 +32,10 @@ export function Hero({
               <span className="heroV2__subhead">Book in seconds.</span>
             </h1>
 
-            <p className="heroV2__p">
+            {/* <p className="heroV2__p">
               Premium cuts, fades, and beard sculpting—built for busy New
               Yorkers. Clear pricing, clean results, calm experience.
-            </p>
+            </p> */}
 
             <div className="heroV2__ctaRow">
               <button className="btn btn--primary btn--lg" onClick={onBook}>
@@ -126,27 +126,6 @@ export function Hero({
                     Clean finish
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="heroV2__miniGrid" aria-label="Highlights">
-              <div className="heroV2__miniCard">
-                <div className="heroV2__miniTitle">Fast booking</div>
-                <div className="heroV2__miniText">
-                  Pick service → time → done
-                </div>
-              </div>
-              <div className="heroV2__miniCard">
-                <div className="heroV2__miniTitle">Clear pricing</div>
-                <div className="heroV2__miniText">No surprises</div>
-              </div>
-              <div className="heroV2__miniCard">
-                <div className="heroV2__miniTitle">Real barbers</div>
-                <div className="heroV2__miniText">Fades · beards · tapers</div>
-              </div>
-              <div className="heroV2__miniCard">
-                <div className="heroV2__miniTitle">Harlem location</div>
-                <div className="heroV2__miniText">Easy in & out</div>
               </div>
             </div>
           </div>

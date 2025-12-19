@@ -10,7 +10,7 @@ import { Hero } from "./sections/Hero/Hero";
 import { ServicesSection } from "./sections/ServicesSection/ServicesSection";
 import { BarbersSection } from "./sections/BarbersSection/BarbersSection";
 import { GallerySection } from "./sections/GallerySection/GallerySection";
-import { FAQSection } from "./sections/FAQSection/FAQSection";
+// import { FAQSection } from "./sections/FAQSection/FAQSection";
 import { ContactSection } from "./sections/ContactSection/ContactSection";
 import { MoneyTransferSection } from "./sections/MoneyTransferSection/MoneyTransferSection";
 
@@ -50,7 +50,7 @@ export default function App() {
           onBook={(barberId, serviceId) => openBooking({ barberId, serviceId })}
         />
         <GallerySection />
-        <FAQSection />
+        {/* <FAQSection /> */}
         <MoneyTransferSection />
         <ContactSection onBook={() => openBooking()} />
       </main>

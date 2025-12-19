@@ -32,8 +32,8 @@ export function Navbar({
             ✦
           </div>
           <div className="brand__text">
-            <div className="brand__name">Yentema Salon.</div>
-            <div className="brand__sub">NYC · Cuts, Fades, Beard</div>
+            <div className="brand__name">Yentema Art Salon</div>
+            {/* <div className="brand__sub">NYC · Cuts, Fades, Beard</div> */}
           </div>
         </div>
 
