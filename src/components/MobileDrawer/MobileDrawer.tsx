@@ -27,6 +27,7 @@ export function MobileDrawer({
         aria-label="Close menu"
         onClick={onClose}
       />
+
       <div className="drawer__panel">
         <div className="drawer__header">
           <div className="brand brand--small">
@@ -38,6 +39,7 @@ export function MobileDrawer({
               <div className="brand__sub">Harlem</div>
             </div>
           </div>
+
           <button className="iconBtn" onClick={onClose} aria-label="Close">
             ✕
           </button>
@@ -46,35 +48,61 @@ export function MobileDrawer({
         <div className="drawer__links">
           <button
             className="drawerLink"
-            onClick={() => (onClose(), scrollToId("services"))}
+            onClick={() => {
+              onClose();
+              scrollToId("services");
+            }}
           >
             Services
           </button>
+
           <button
             className="drawerLink"
-            onClick={() => (onClose(), scrollToId("barbers"))}
+            onClick={() => {
+              onClose();
+              scrollToId("barbers");
+            }}
           >
             Barbers
           </button>
+
           <button
             className="drawerLink"
-            onClick={() => (onClose(), scrollToId("gallery"))}
+            onClick={() => {
+              onClose();
+              scrollToId("gallery");
+            }}
           >
             Gallery
           </button>
+
+          {/* ✅ NEW: Money Transfer */}
+          <button
+            className="drawerLink"
+            onClick={() => {
+              onClose();
+              scrollToId("transfer");
+            }}
+          >
+            Money Transfer
+          </button>
+
           {/* <button
             className="drawerLink"
-            onClick={() => (onClose(), scrollToId("faq"))}
+            onClick={() => {
+              onClose();
+              scrollToId("faq");
+            }}
           >
             FAQ
           </button> */}
 
-          <button className="drawerLink" onClick={() => scrollToId("transfer")}>
-            Money Transfer
-          </button>
           <button
             className="drawerLink"
-            onClick={() => (onClose(), scrollToId("contact"))}
+            onClick={() => {
+              onClose();
+              scrollToId("contact");
+            }}
           >
             Contact & Hours
           </button>
@@ -83,6 +111,7 @@ export function MobileDrawer({
             <button className="btn btn--primary" onClick={onBook}>
               Book an appointment
             </button>
+
             <a className="btn" href="tel:000-000-0000">
               Call (000) 000-0000
             </a>
