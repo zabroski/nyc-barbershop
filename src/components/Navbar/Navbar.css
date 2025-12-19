@@ -62,3 +62,66 @@
   .nav__burger{ display:none; }
   .nav__links{ display:flex; }
 }
+
+/* Hide brand icon on mobile */
+@media (max-width: 979px) {
+  .brand__mark {
+    display: none;
+  }
+}
+
+
+
+
+/* =========================================
+   Brand text – centered & refined
+   ========================================= */
+
+/* Base styling */
+.brand__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* MOBILE: center brand text */
+@media (max-width: 979px) {
+  .brand {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .brand__text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .brand__name {
+    font-size: 22px;
+    font-weight: 950;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(230, 234, 240, 0.8)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@media (min-width: 980px) {
+  .brand__name {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  .brand__text {
+    align-items: flex-start;
+  }
+}
