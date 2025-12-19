@@ -62,11 +62,15 @@ export function MobileDrawer({
           >
             Gallery
           </button>
-          <button
+          {/* <button
             className="drawerLink"
             onClick={() => (onClose(), scrollToId("faq"))}
           >
             FAQ
+          </button> */}
+
+          <button className="drawerLink" onClick={() => scrollToId("transfer")}>
+            Money Transfer
           </button>
           <button
             className="drawerLink"
