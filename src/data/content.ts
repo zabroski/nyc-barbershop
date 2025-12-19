@@ -100,7 +100,7 @@ export const BARBERS: Barber[] = [
   },
   {
     id: "amina",
-    name: "Rayenemanegre",
+    name: "Roland",
     title: "",
     image: aminaImg,
     specialty: ["Tapers", "Designs", "Detail work"],
