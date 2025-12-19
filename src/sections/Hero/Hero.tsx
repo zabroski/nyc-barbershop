@@ -1,5 +1,5 @@
 // import React from "react";
-import { HERO_IMAGE, STATS } from "../../data/content";
+import { HERO_IMAGE } from "../../data/content";
 import { formatMoney } from "../../utils/format";
 import { scrollToId } from "../../utils/scroll";
 import "./Hero.css";
@@ -55,14 +55,14 @@ export function Hero({
               </a>
             </div>
 
-            <div className="heroV2__stats" aria-label="Shop stats">
+            {/* <div className="heroV2__stats" aria-label="Shop stats">
               {STATS.map((s) => (
                 <div className="heroV2__stat" key={s.label}>
                   <div className="heroV2__statValue">{s.value}</div>
                   <div className="heroV2__statLabel">{s.label}</div>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             <div className="heroV2__micro">
               <span className="muted">Address:</span> 2273 7th AVE, New York, NY{" "}
