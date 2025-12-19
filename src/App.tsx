@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Modal } from "./components/Modal/Modal";
-import { Topbar } from "./components/Topbar/Topbar";
+// import { Topbar } from "./components/Topbar/Topbar";
 import { Navbar } from "./components/Navbar/Navbar";
 import { MobileDrawer } from "./components/MobileDrawer/MobileDrawer";
 import { BookingForm } from "./components/BookingForm/BookingForm";
@@ -29,7 +29,7 @@ export default function App() {
 
   return (
     <div className="app app--light">
-      <Topbar onBook={() => openBooking()} />
+      {/* <Topbar onBook={() => openBooking()} /> */}
       <Navbar
         onOpenMenu={() => setNavOpen(true)}
         onBook={() => openBooking()}
