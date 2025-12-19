@@ -47,8 +47,12 @@ export function Navbar({
           <button className="link" onClick={() => scrollToId("gallery")}>
             Gallery
           </button>
-          <button className="link" onClick={() => scrollToId("faq")}>
+          {/* <button className="link" onClick={() => scrollToId("faq")}>
             FAQ
+          </button> */}
+
+          <button className="link" onClick={() => scrollToId("transfer")}>
+            Money Transfer
           </button>
           <button className="btn" onClick={() => scrollToId("contact")}>
             Contact
