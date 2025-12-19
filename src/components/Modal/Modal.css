@@ -1,4 +1,4 @@
-.modal{
+/* .modal{
   position: fixed;
   inset: 0;
   z-index: 90;
@@ -36,5 +36,93 @@
 .modal__content{ padding: 14px; }
 
 
+ */
 
 
+
+
+ .modal{
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+
+  /* iOS safe-area support */
+  padding-top: max(18px, env(safe-area-inset-top));
+  padding-bottom: max(18px, env(safe-area-inset-bottom));
+}
+
+.modal__backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.62);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+/* Make panel scroll-safe on mobile */
+.modal__panel{
+  position: relative;
+  width: min(860px, 100%);
+  background: rgba(10,12,18,.92);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius2);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+
+  /* KEY: constrain height so header doesn't disappear */
+  max-height: calc(100svh - 36px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Keep header visible */
+.modal__header{
+  padding: 14px 14px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  /* ensure header is readable over content */
+  background: rgba(10,12,18,.98);
+
+  /* extra top padding for iPhones with notch */
+  padding-top: max(14px, env(safe-area-inset-top));
+}
+
+.modal__content{
+  padding: 14px;
+
+  /* KEY: content scrolls, header stays */
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  flex: 1 1 auto;
+}
+
+.modal__kicker{ color: rgba(242,244,248,.72); font-size: 12px; }
+.modal__title{ margin: 4px 0 0; font-size: 18px; letter-spacing: -0.2px; }
+
+/* Ensure the X is always tappable */
+.modal__header .iconBtn{
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+/* Mobile fine-tuning */
+@media (max-width: 520px){
+  .modal{ padding: 12px; padding-top: max(12px, env(safe-area-inset-top)); }
+  .modal__panel{
+    width: 100%;
+    max-height: calc(100svh - 24px);
+    border-radius: 18px;
+  }
+}
