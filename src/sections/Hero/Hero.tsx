@@ -42,7 +42,7 @@ export function Hero({ onBook, onBookFade }: HeroProps) {
                 View services
               </button>
 
-              <a className="heroV2__call" href="tel:+12125550123">
+              <a className="heroV2__call" href="tel:+6466012151">
                 <span className="heroV2__callDot" aria-hidden="true" />
                 Call now
               </a>

@@ -188,7 +188,7 @@ export function MoneyTransferSection() {
               {active.note && <div className="note">{active.note}</div>}
 
               <div className="transferInfo__actions">
-                <a className="btn" href="tel:+6466730832">
+                <a className="btn" href="tel:+6466012151">
                   Call for availability
                 </a>
                 <a
@@ -237,7 +237,7 @@ export function MoneyTransferSection() {
                   Call and we’ll confirm what’s available.
                 </div>
               </div>
-              <a className="btn btn--primary" href="tel:+16466730832">
+              <a className="btn btn--primary" href="tel:+6466012151">
                 Call now
               </a>
             </div>

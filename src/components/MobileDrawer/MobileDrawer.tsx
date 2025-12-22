@@ -115,7 +115,7 @@ export function MobileDrawer({
               Book an appointment
             </button>
 
-            <a className="btn" href="tel:000-000-0000">
+            <a className="btn" href="tel:+6466012151">
               Call (000) 000-0000
             </a>
           </div>

@@ -24,8 +24,8 @@ export function ContactSection({ onBook }: { onBook: () => void }) {
 
             <div className="contactCard__row">
               <span className="muted">Phone</span>
-              <a className="inlineLink" href="tel:+12125550123">
-                (212) 000-0000
+              <a className="inlineLink" href="tel:+6466012151">
+                (646) 601-2151
               </a>
             </div>
 

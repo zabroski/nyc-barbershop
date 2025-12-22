@@ -147,7 +147,7 @@ export function BookingForm({
           <span className="field__label">Phone</span>
           <input
             className="field__input"
-            placeholder="(212) 555-0123"
+            placeholder="+6466012151"
             value={draft.phone}
             onChange={(e) => setDraft((d) => ({ ...d, phone: e.target.value }))}
           />
