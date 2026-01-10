@@ -297,3 +297,60 @@
 
 /* optional wrapper if you want spacing control */
 .transferCardWrap{ display:block; }
+
+
+
+
+/* Ensure expanded content isn't clipped and the active card can sit above others */
+.transferCard{
+  position: relative;
+  overflow: visible; /* important */
+}
+
+.transferCard--active{
+  z-index: 2;
+}
+
+/* Expandable details area */
+.transferCard__details{
+  margin-top: 10px;
+
+  /* collapsed */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  transition: max-height 220ms ease, opacity 160ms ease;
+}
+
+/* expanded when active */
+.transferCard--active .transferCard__details{
+  max-height: 320px; /* adjust if you add more content */
+  opacity: 1;
+}
+
+/* inner spacing so content doesn't feel cramped */
+.transferCard__detailsInner{
+  padding-top: 6px;
+  display: grid;
+  gap: 8px;
+}
+
+/* subtle difference for expanded bullets */
+.transferBullet--detail{
+  opacity: 0.95;
+}
+
+/* optional note styling inside card */
+.transferCard__note{
+  margin-top: 4px;
+}
+
+/* tiny chevron motion so "Details" feels interactive */
+.transferCard__chev{
+  display: inline-block;
+  transition: transform 160ms ease;
+}
+.transferCard__chev.isOpen{
+  transform: rotate(90deg);
+}

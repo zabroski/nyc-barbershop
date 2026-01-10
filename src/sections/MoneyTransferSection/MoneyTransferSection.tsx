@@ -56,6 +56,54 @@ function ProviderIcon({ id }: { id: TransferProviderId }) {
   return <div className={`providerMark providerMark--${id}`}>{letter}</div>;
 }
 
+// function ProviderCard({
+//   provider,
+//   active,
+//   onSelect,
+// }: {
+//   provider: TransferProvider;
+//   active: boolean;
+//   onSelect: () => void;
+// }) {
+//   return (
+//     <button
+//       type="button"
+//       className={`transferCard ${active ? "transferCard--active" : ""}`}
+//       onClick={onSelect}
+//       aria-pressed={!!active}
+//     >
+//       <div className="transferCard__head">
+//         <div className="transferCard__identity">
+//           <ProviderIcon id={provider.id} />
+//           <div>
+//             <div className="transferCard__nameRow">
+//               <div className="transferCard__name">{provider.name}</div>
+//               <span className="transferBadge">{provider.badge}</span>
+//             </div>
+//             <div className="transferCard__tagline muted">
+//               {provider.tagline}
+//             </div>
+//           </div>
+//         </div>
+
+//         <div className="transferCard__hint">
+//           <span className="inlineLink">Details</span>
+//           <span className="muted">→</span>
+//         </div>
+//       </div>
+
+//       <div className="transferCard__bullets">
+//         {provider.details.slice(0, 2).map((d) => (
+//           <div key={d} className="transferBullet">
+//             <span className="transferBullet__dot" aria-hidden="true" />
+//             <span>{d}</span>
+//           </div>
+//         ))}
+//       </div>
+//     </button>
+//   );
+// }
+
 function ProviderCard({
   provider,
   active,
@@ -65,6 +113,8 @@ function ProviderCard({
   active: boolean;
   onSelect: () => void;
 }) {
+  const extraDetails = provider.details.slice(2);
+
   return (
     <button
       type="button"
@@ -86,12 +136,17 @@ function ProviderCard({
           </div>
         </div>
 
-        <div className="transferCard__hint">
+        <div className="transferCard__hint" aria-hidden="true">
           <span className="inlineLink">Details</span>
-          <span className="muted">→</span>
+          <span
+            className={`muted transferCard__chev ${active ? "isOpen" : ""}`}
+          >
+            →
+          </span>
         </div>
       </div>
 
+      {/* Preview bullets */}
       <div className="transferCard__bullets">
         {provider.details.slice(0, 2).map((d) => (
           <div key={d} className="transferBullet">
@@ -100,6 +155,24 @@ function ProviderCard({
           </div>
         ))}
       </div>
+
+      {/* Expandable details */}
+      {extraDetails.length > 0 && (
+        <div className="transferCard__details" aria-hidden={!active}>
+          <div className="transferCard__detailsInner">
+            {extraDetails.map((d) => (
+              <div key={d} className="transferBullet transferBullet--detail">
+                <span className="transferBullet__dot" aria-hidden="true" />
+                <span>{d}</span>
+              </div>
+            ))}
+
+            {provider.note && (
+              <div className="note transferCard__note">{provider.note}</div>
+            )}
+          </div>
+        </div>
+      )}
     </button>
   );
 }

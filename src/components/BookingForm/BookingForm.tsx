@@ -1,4 +1,3 @@
-// src/components/BookingForm.tsx
 import { useMemo, useState } from "react";
 import { BARBERS, SERVICES, TIMES } from "../../data/content";
 import { formatMoney } from "../../utils/format";
@@ -21,7 +20,7 @@ export function BookingForm({
 }: {
   initialServiceId?: string;
   initialBarberId?: string;
-  onDone: () => void;
+  onDone: (booking: BookingDraft) => void; // CHANGED
 }) {
   const defaultDate = useMemo(() => {
     const today = new Date();
@@ -173,11 +172,20 @@ export function BookingForm({
           disabled={missing}
           onClick={() => {
             setSubmitted(true);
-            setTimeout(() => onDone(), 650);
+
+            const payload: BookingDraft = {
+              ...draft,
+              name: draft.name.trim(),
+              phone: draft.phone.trim(),
+              notes: draft.notes.trim(),
+            };
+
+            setTimeout(() => onDone(payload), 650);
           }}
         >
           Confirm booking
         </button>
+
         <div className="muted booking__fineprint">
           By confirming, you agree to our punctual scheduling policy.
         </div>
