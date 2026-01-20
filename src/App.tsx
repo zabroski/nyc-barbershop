@@ -4,7 +4,7 @@ import { Modal } from "./components/Modal/Modal";
 // import { Topbar } from "./components/Topbar/Topbar";
 import { Navbar } from "./components/Navbar/Navbar";
 import { MobileDrawer } from "./components/MobileDrawer/MobileDrawer";
-import { BookingForm } from "./components/BookingForm/BookingForm";
+import { BookingFlow } from "./sections/BookingFlow/BookingFlow";
 
 import { Hero } from "./sections/Hero/Hero";
 import { ServicesSection } from "./sections/ServicesSection/ServicesSection";
@@ -63,15 +63,27 @@ export default function App() {
         Book now
       </button>
 
+      {/* <Modal
+        open={bookingOpen}
+        title="Book an appointment"
+        onClose={() => setBookingOpen(false)}
+      >
+        <BookingFlow
+          initialServiceId={bookingSeed.serviceId}
+          initialBarberId={bookingSeed.barberId}
+          onDone={() => setBookingOpen(false)}
+        />
+      </Modal> */}
+
       <Modal
         open={bookingOpen}
         title="Book an appointment"
         onClose={() => setBookingOpen(false)}
       >
-        <BookingForm
+        <BookingFlow
           initialServiceId={bookingSeed.serviceId}
           initialBarberId={bookingSeed.barberId}
-          onDone={() => setBookingOpen(false)}
+          onClose={() => setBookingOpen(false)}
         />
       </Modal>
     </div>

@@ -1,26 +1,34 @@
 import { useState } from "react";
-import type { BookingDraft } from "../BookingForm/BookingForm";
-import { BookingForm } from "../BookingForm/BookingForm";
-import { sendBookingEmail } from "../../integrations/email";
+import {
+  BookingForm,
+  type BookingDraft,
+} from "../components/BookingForm/BookingForm";
+import { sendBookingEmail } from "../utils/sendBookingEmail";
 
-export function BookingFlow({ onClose }: { onClose: () => void }) {
+export function BookingFlow() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle"
   );
   const [errorMsg, setErrorMsg] = useState("");
 
   const handleDone = async (booking: BookingDraft) => {
+    console.log("[BookingFlow] onDone payload:", booking);
+
     setStatus("sending");
     setErrorMsg("");
 
     try {
-      await sendBookingEmail(booking); // IMPORTANT: await this
+      const res = await sendBookingEmail(booking);
+      console.log("[EmailJS] success:", res);
+
       setStatus("sent");
-      setTimeout(onClose, 800);
-    } catch (e: any) {
-      console.error("[Booking email] failed:", e);
+    } catch (err) {
+      console.error("[EmailJS] failed:", err);
+
       setStatus("error");
-      setErrorMsg(e?.message || "Failed to send email");
+      setErrorMsg(
+        err instanceof Error ? err.message : "Failed to send booking email."
+      );
     }
   };
 
@@ -30,18 +38,18 @@ export function BookingFlow({ onClose }: { onClose: () => void }) {
 
       {status === "sending" && (
         <div className="toast" role="status" aria-live="polite">
-          Sending confirmation…
+          Sending booking email…
         </div>
       )}
 
       {status === "sent" && (
         <div className="toast" role="status" aria-live="polite">
-          Booking sent successfully.
+          Booking confirmed. Email sent.
         </div>
       )}
 
       {status === "error" && (
-        <div className="toast" role="alert" aria-live="assertive">
+        <div className="toast toast--error" role="status" aria-live="polite">
           Email failed: {errorMsg}
         </div>
       )}
