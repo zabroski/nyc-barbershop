@@ -62,19 +62,6 @@ export default function App() {
       >
         Book now
       </button>
-
-      {/* <Modal
-        open={bookingOpen}
-        title="Book an appointment"
-        onClose={() => setBookingOpen(false)}
-      >
-        <BookingFlow
-          initialServiceId={bookingSeed.serviceId}
-          initialBarberId={bookingSeed.barberId}
-          onDone={() => setBookingOpen(false)}
-        />
-      </Modal> */}
-
       <Modal
         open={bookingOpen}
         title="Book an appointment"

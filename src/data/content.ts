@@ -8,7 +8,8 @@ import classicImgs from "../assets/gallery/classic1.png";
 
 import marcusImg from "../assets/barbers/marcus.jpg";
 import julesImg from "../assets/barbers/jules.png";
-import aminaImg from "../assets/barbers/amina.jpg";
+import aminaImg from "../assets/logo-yentema-art-salon.png";
+// import aminaImg from "../assets/barbers/amina.jpg";
 
 export type Service = {
   id: string;

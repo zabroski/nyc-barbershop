@@ -17,7 +17,7 @@ export function BookingFlow({
   onClose,
 }: Props) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
-    "idle"
+    "idle",
   );
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -31,12 +31,6 @@ export function BookingFlow({
 
       // Close modal shortly after success
       setTimeout(() => onClose(), 800);
-      // } catch (err) {
-      //   setStatus("error");
-      //   setErrorMsg(
-      //     err instanceof Error ? err.message : "Failed to send booking email."
-      //   );
-      // }
     } catch (err: unknown) {
       console.error("[EmailJS] failed full error:", err);
 

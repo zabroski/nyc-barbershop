@@ -178,13 +178,120 @@
   box-shadow: var(--shadow);
 }
 
+
+/* Emphasize lower part (feet) */
 .heroV2__img {
-  width: 100%;
-  height: 360px;
   object-fit: cover;
-  display: block;
-  filter: saturate(1.05) contrast(1.02);
-  transform: scale(1.02);
+  object-position: 50% 85%; /* push framing down */
+}
+
+
+/* Emphasize lower part (feet) */
+.heroV2__img {
+  object-fit: cover;
+  object-position: 50% 90%;
+  transform: scale(0.95);
+}
+
+
+.heroV2__img {
+  object-fit: contain;
+  object-position: 50% 100%;
+  background: #0b0d12; /* shows behind the letterbox area */
+}
+
+
+/* Desktop default: show more feet */
+.heroV2__img {
+  object-position: 50% 85%;
+}
+
+@media (max-width: 900px) {
+  /* Mobile: usually better to bias toward face */
+  .heroV2__media {
+    aspect-ratio: 16 / 12;
+  }
+
+  .heroV2__img {
+    object-position: 50% 20%;
+  }
+}
+
+
+/* --- MEDIA FRAME: prevents “margin” look + ensures full bleed --- */
+.heroV2__media {
+  position: relative;
+  width: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #0b0d12; /* fallback behind image */
+  /* Give the hero image a consistent frame */
+  aspect-ratio: 4 / 5; /* desktop portrait feel */
+}
+
+/* Remove inline image baseline gap + make image fill the frame */
+.heroV2__img {
+  display: block;          /* removes bottom gap */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* professional full-bleed */
+  object-position: 50% 85%;/* DESKTOP: show more feet */
+  transform: scale(1.06);  /* hides “baked-in” margins in the image file */
+  transform-origin: center;
+}
+
+/* Optional: keeps the image crisp on some GPUs */
+.heroV2__img {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+
+
+@media (max-width: 480px) {
+  .heroV2__media {
+    aspect-ratio: 16 / 12;
+    border-radius: 16px;
+  }
+
+  .heroV2__img {
+    object-position: 50% 15%;
+    transform: scale(1.10);
+  }
+}
+
+
+
+/* Emphasize upper part (face) */
+.heroV2__img {
+  object-fit: cover;
+  object-position: 50% 15%;
+}
+
+
+
+/* Hero.css */
+
+.heroV2__media {
+  position: relative;
+  border-radius: 20px;          /* match your design */
+  overflow: hidden;             /* ensures no bleed outside radius */
+  background: #0b0d12;          /* fallback behind the image */
+}
+
+/* Give the image a predictable frame */
+.heroV2__img {
+  display: block;               /* removes inline-image baseline gap */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            /* fills frame nicely */
+  object-position: 50% 50%;     /* default center */
+  transform: translateZ(0);     /* helps with rendering on some GPUs */
+}
+
+/* If your media container has no defined height, give it one */
+.heroV2__media {
+  aspect-ratio: 4 / 5;          /* choose what looks best (4/5, 1/1, 16/9, etc.) */
 }
 
 .heroV2__glass {
@@ -318,8 +425,45 @@
   }
 }
 
-@media (min-width: 1100px) {
+@media (max-width: 900px) {
+  .heroV2__media {
+    aspect-ratio: 16 / 11; /* better phone shape */
+    border-radius: 18px;
+  }
+
   .heroV2__img {
-    height: 520px;
+    object-position: 50% 18%; /* MOBILE: reveal face */
+    transform: scale(1.08);   /* keep hiding border */
   }
 }
+
+/* 4) Small phones: slightly more face bias */
+@media (max-width: 480px) {
+  .heroV2__media {
+    aspect-ratio: 16 / 12;
+    border-radius: 16px;
+  }
+
+  .heroV2__img {
+    object-position: 50% 14%;
+    transform: scale(1.10);
+  }
+}
+
+
+/* Desktop: show the text block */
+.heroV2__glassTop > div:first-child {
+  display: block;
+}
+
+/* Mobile: hide the text block, keep the button */
+@media (max-width: 768px) {
+  .heroV2__glassTop > div:first-child {
+    display: none;
+  }
+}
+
+
+
+
+

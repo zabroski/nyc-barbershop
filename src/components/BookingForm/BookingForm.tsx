@@ -26,7 +26,7 @@ export function BookingForm({
     const today = new Date();
     return `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(
       2,
-      "0"
+      "0",
     )}-${String(today.getDate()).padStart(2, "0")}`;
   }, []);
 
@@ -136,7 +136,7 @@ export function BookingForm({
           <span className="field__label">Your name</span>
           <input
             className="field__input"
-            placeholder="e.g., Issouf"
+            placeholder=""
             value={draft.name}
             onChange={(e) => setDraft((d) => ({ ...d, name: e.target.value }))}
           />
@@ -146,7 +146,7 @@ export function BookingForm({
           <span className="field__label">Phone</span>
           <input
             className="field__input"
-            placeholder="+6466012151"
+            placeholder=""
             value={draft.phone}
             onChange={(e) => setDraft((d) => ({ ...d, phone: e.target.value }))}
           />

@@ -96,3 +96,63 @@
     border-radius: 30px;
   }
 }
+
+
+
+
+
+/* ===============================
+   MOBILE BARBER PROFILE ENHANCEMENT
+   =============================== */
+
+@media (max-width: 768px) {
+  .barberCard {
+    padding: 16px;
+    border-radius: 18px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .barberCard__img,
+  .barber__img {
+    width: 100%;
+    height: 220px;          /* bigger visual presence */
+    object-fit: cover;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .barberCard__img,
+  .barber__img {
+    height: 260px;          /* even bigger on small phones */
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .barberCard__name,
+  .barber__name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+
+  .barberCard__meta,
+  .barber__meta {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .barbersGrid {
+    grid-template-columns: 1fr; /* one card per row */
+  }
+}

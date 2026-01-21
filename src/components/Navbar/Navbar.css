@@ -128,3 +128,45 @@
     align-items: flex-start;
   }
 }
+
+
+
+
+
+
+.brand__text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Logo image */
+.brand__logo {
+  height: 38px;         /* desktop size */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Brand text */
+.brand__name {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .brand__logo {
+    height: 32px;
+  }
+
+  .brand__name {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
