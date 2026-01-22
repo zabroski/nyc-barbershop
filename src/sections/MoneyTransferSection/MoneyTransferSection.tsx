@@ -56,6 +56,22 @@ function ProviderIcon({ id }: { id: TransferProviderId }) {
   return <div className={`providerMark providerMark--${id}`}>{letter}</div>;
 }
 
+// function ProviderIcon({ id }: { id: TransferProviderId }) {
+//   // Use official MoneyGram logo
+//   if (id === "moneygram") {
+//     return (
+//       <div className={`providerMark providerMark--moneygram`}>
+//         <img src="/moneygram-logo.png" alt="" className="providerMark__logo" />
+//       </div>
+//     );
+//   }
+
+//   // Fallback letters for others
+//   const letter = id === "western" ? "W" : "C";
+
+//   return <div className={`providerMark providerMark--${id}`}>{letter}</div>;
+// }
+
 // function ProviderCard({
 //   provider,
 //   active,
@@ -158,7 +174,10 @@ function ProviderCard({
 
       {/* Expandable details */}
       {extraDetails.length > 0 && (
-        <div className="transferCard__details" aria-hidden={!active}>
+        <div
+          className="transferCard__details"
+          aria-hidden={!active ? "true" : "false"}
+        >
           <div className="transferCard__detailsInner">
             {extraDetails.map((d) => (
               <div key={d} className="transferBullet transferBullet--detail">
@@ -182,7 +201,7 @@ export function MoneyTransferSection() {
 
   const active = useMemo(
     () => PROVIDERS.find((p) => p.id === activeId)!,
-    [activeId]
+    [activeId],
   );
 
   const address = "2273 7th AVE, New York, NY";
@@ -201,7 +220,7 @@ export function MoneyTransferSection() {
       },
       { title: "Keep receipt", desc: "Useful for verification and tracking." },
     ],
-    []
+    [],
   );
 
   return (
@@ -283,9 +302,11 @@ export function MoneyTransferSection() {
           {/* RIGHT */}
           <div className="card transferRight">
             <div className="transferRight__header">
-              <div className="transferRight__title">Same place, two needs</div>
+              <div className="transferRight__title">
+                One place, two solutions!{" "}
+              </div>
               <div className="muted">
-                Get a clean cut and handle a transfer in one stop.
+                Get a clean cut and transfer money in one stop.
               </div>
             </div>
 

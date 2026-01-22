@@ -66,9 +66,9 @@ export function ContactSection({ onBook }: { onBook: () => void }) {
             <button className="link" onClick={() => scrollToId("barbers")}>
               Barbers
             </button>
-            <button className="link" onClick={() => scrollToId("faq")}>
+            {/* <button className="link" onClick={() => scrollToId("faq")}>
               FAQ
-            </button>
+            </button> */}
           </div>
         </footer>
       </div>

@@ -1,172 +1,171 @@
+/* ===============================
+   NAVBAR – CLEAN + RESPONSIVE
+   =============================== */
 
-
-.nav{
+.nav {
   position: sticky;
-  top: 0;               /* ✅ was 42px for Topbar */
+  top: 0;
   z-index: 50;
-  background: rgba(7,8,11,.55);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,.06);
+  width: 100%;
+
+  /* Base font for navbar UI */
+  font-size: 1.05rem;
+  line-height: 1.2;
 }
 
-.nav__inner{
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  padding: 14px 0;
-  gap: 12px;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap: 12px;
-  cursor:pointer;
-  -webkit-user-select: none;
-  user-select:none;
-}
-.brand__mark{
-  width: 42px;
-  height: 42px;
-  border-radius: 16px;
-  display:grid;
-  place-items:center;
-  background: radial-gradient(120% 120% at 30% 10%, rgba(94,231,255,.35), rgba(184,255,106,.20));
-  border: 1px solid rgba(255,255,255,.12);
-  box-shadow: 0 16px 40px rgba(0,0,0,.35);
-}
-.brand__name{ font-weight: 900; letter-spacing: .9px; font-size: 30px; }
-.brand__sub{ color: var(--muted); font-size: 12px; margin-top: 2px; }
-
-.nav__links{ display:none; align-items:center; gap:6px; }
-
-.nav__burger{
-  display:inline-grid;
-  gap:5px;
-  border:1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.06);
-  width: 44px;
-  height: 44px;
-  border-radius: 16px;
-  cursor:pointer;
-  padding: 12px;
-}
-.nav__burger span{
-  display:block;
-  height:2px;
-  width:100%;
-  background: rgba(242,244,248,.9);
-  border-radius: 999px;
-  opacity:.9;
-}
-
-@media (min-width: 980px){
-  .nav__burger{ display:none; }
-  .nav__links{ display:flex; }
-}
-
-/* Hide brand icon on mobile */
-@media (max-width: 979px) {
-  .brand__mark {
-    display: none;
-  }
-}
-
-
-
-
-/* =========================================
-   Brand text – centered & refined
-   ========================================= */
-
-/* Base styling */
-.brand__text {
+.nav__inner {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+/* ===============================
+   BURGER (MOBILE / TABLET)
+   =============================== */
+
+.nav__burger {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  cursor: pointer;
 }
 
-/* MOBILE: center brand text */
-@media (max-width: 979px) {
-  .brand {
-    flex: 1;
-    justify-content: center;
-  }
-
-  .brand__text {
-    align-items: center;
-    text-align: center;
-  }
-
-  .brand__name {
-    font-size: 22px;
-    font-weight: 950;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.95),
-      rgba(230, 234, 240, 0.8)
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
+.nav__burger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 3px 0;
+  background: currentColor;
+  opacity: 0.9;
 }
 
-@media (min-width: 980px) {
-  .brand__name {
-    font-size: 28px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.96);
-  }
+/* ===============================
+   BRAND
+   =============================== */
 
-  .brand__text {
-    align-items: flex-start;
-  }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  min-width: 0;
 }
-
-
-
-
-
 
 .brand__text {
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
 }
 
-/* Logo image */
 .brand__logo {
-  height: 38px;         /* desktop size */
+  height: 34px;
   width: auto;
+  display: block;
   object-fit: contain;
 }
 
-/* Brand text */
+/* Brand bigger than links (professional hierarchy) */
 .brand__name {
-  font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: 0.2px;
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  line-height: 1.05;
+/* text-align: right; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 52vw;
+}
+
+/* ===============================
+   NAV LINKS (DESKTOP)
+   =============================== */
+
+.nav__links {
+  display: none; /* default: hidden (use burger) */
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
   white-space: nowrap;
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .brand__logo {
-    height: 32px;
+/* Make buttons/links consistent sizing */
+.nav .link,
+.nav .btn {
+  font: inherit;
+  line-height: 1.2;
+}
+
+/* Links */
+.nav .link {
+  background: transparent;
+  border: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  opacity: 0.92;
+  font-size: 1.6rem;
+}
+
+/* Buttons */
+.nav .btn {
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+/* ===============================
+   DESKTOP BREAKPOINT
+   Show links, hide burger
+   =============================== */
+
+@media (min-width: 1100px) {
+  .nav__burger {
+    display: none;
+  }
+
+  .nav__links {
+    display: flex;
   }
 
   .brand__name {
-    font-size: 0.95rem;
+    max-width: none;
   }
 }
 
+/* ===============================
+   RESPONSIVE TUNING
+   =============================== */
 
+@media (max-width: 768px) {
+  .nav {
+    font-size: 1rem;
+  }
 
+  .brand__name {
+    font-size: 1.35rem;
+    max-width: 68vw;
+    white-space: normal; /* allow wrap on small screens */
+    line-height: 1.15;
+  }
 
+  .brand__logo {
+    height: 30px;
+  }
+}
 
+@media (max-width: 480px) {
+  .brand__name {
+    font-size: 1.2rem;
+    max-width: 70vw;
+  }
+}

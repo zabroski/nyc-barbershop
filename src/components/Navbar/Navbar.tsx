@@ -1,7 +1,7 @@
 // src/components/Navbar.tsx
 import { scrollToId } from "../../utils/scroll";
 // import logo from "../../assets/logo-yentema.png";
-import logo from "../../assets/logo-yentema-art-salon.png";
+// import logo from "../../assets/logo-yentema-art-salon.png";
 
 import "./Navbar.css";
 
@@ -35,17 +35,16 @@ export function Navbar({
             ✦
           </div> */}
 
-          <div className="brand__mark" aria-hidden="true">
+          {/* <div className="brand__mark" aria-hidden="true">
             <img
               src={logo}
               alt="Yentema Art Salon logo"
               className="brand__logo"
             />
-          </div>
+          </div> */}
 
           <div className="brand__text">
             <div className="brand__name">Yentema Art Salon</div>
-            {/* <div className="brand__sub">NYC · Cuts, Fades, Beard</div> */}
           </div>
         </div>
 
