@@ -13,9 +13,7 @@ import { GallerySection } from "./sections/GallerySection/GallerySection";
 // import { FAQSection } from "./sections/FAQSection/FAQSection";
 import { ContactSection } from "./sections/ContactSection/ContactSection";
 import { MoneyTransferSection } from "./sections/MoneyTransferSection/MoneyTransferSection";
-
-// ✅ ADD THIS IMPORT
-import { AppTutorial } from "./components/AppTutorial/AppTutorial";
+import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 
 type BookingSeed = { serviceId?: string; barberId?: string };
 
@@ -32,13 +30,12 @@ export default function App() {
 
   return (
     <div className="app app--light">
-      {/* ✅ ADD THIS (place near the top so it sees everything) */}
-      <AppTutorial onOpenBooking={() => openBooking()} />
-
       {/* <Topbar onBook={() => openBooking()} /> */}
 
       {/* ✅ OPTIONAL: wrap Navbar so tutorial can target ".navbar" */}
       <div className="navbar">
+        <ScrollToTop />
+
         <Navbar
           onOpenMenu={() => setNavOpen(true)}
           onBook={() => openBooking()}

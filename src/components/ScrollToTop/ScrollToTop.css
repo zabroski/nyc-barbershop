@@ -1,0 +1,30 @@
+.scrollTop {
+  position: fixed;
+  bottom: 90px; /* sits nicely above your floating Book button */
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.scrollTop:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .scrollTop {
+    bottom: 80px;
+    right: 16px;
+  }
+}
