@@ -55,71 +55,6 @@ function ProviderIcon({ id }: { id: TransferProviderId }) {
   const letter = id === "moneygram" ? "M" : id === "western" ? "W" : "C";
   return <div className={`providerMark providerMark--${id}`}>{letter}</div>;
 }
-
-// function ProviderIcon({ id }: { id: TransferProviderId }) {
-//   // Use official MoneyGram logo
-//   if (id === "moneygram") {
-//     return (
-//       <div className={`providerMark providerMark--moneygram`}>
-//         <img src="/moneygram-logo.png" alt="" className="providerMark__logo" />
-//       </div>
-//     );
-//   }
-
-//   // Fallback letters for others
-//   const letter = id === "western" ? "W" : "C";
-
-//   return <div className={`providerMark providerMark--${id}`}>{letter}</div>;
-// }
-
-// function ProviderCard({
-//   provider,
-//   active,
-//   onSelect,
-// }: {
-//   provider: TransferProvider;
-//   active: boolean;
-//   onSelect: () => void;
-// }) {
-//   return (
-//     <button
-//       type="button"
-//       className={`transferCard ${active ? "transferCard--active" : ""}`}
-//       onClick={onSelect}
-//       aria-pressed={!!active}
-//     >
-//       <div className="transferCard__head">
-//         <div className="transferCard__identity">
-//           <ProviderIcon id={provider.id} />
-//           <div>
-//             <div className="transferCard__nameRow">
-//               <div className="transferCard__name">{provider.name}</div>
-//               <span className="transferBadge">{provider.badge}</span>
-//             </div>
-//             <div className="transferCard__tagline muted">
-//               {provider.tagline}
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="transferCard__hint">
-//           <span className="inlineLink">Details</span>
-//           <span className="muted">→</span>
-//         </div>
-//       </div>
-
-//       <div className="transferCard__bullets">
-//         {provider.details.slice(0, 2).map((d) => (
-//           <div key={d} className="transferBullet">
-//             <span className="transferBullet__dot" aria-hidden="true" />
-//             <span>{d}</span>
-//           </div>
-//         ))}
-//       </div>
-//     </button>
-//   );
-// }
-
 function ProviderCard({
   provider,
   active,
@@ -280,7 +215,7 @@ export function MoneyTransferSection() {
               {active.note && <div className="note">{active.note}</div>}
 
               <div className="transferInfo__actions">
-                <a className="btn" href="tel:+6466012151">
+                <a className="btn" href="tel:+1646-601-2151">
                   Call for availability
                 </a>
                 <a
@@ -294,7 +229,7 @@ export function MoneyTransferSection() {
               </div>
 
               <div className="transferInfo__meta muted">
-                Location: {address} · Mon–Sat 10am–10pm · Sun 11am–7pm
+                Location: {address} · Mon–Sat 10am–10pm · Sun 11am–8pm
               </div>
             </div>
           </div>

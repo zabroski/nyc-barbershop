@@ -31,18 +31,6 @@ export function Navbar({
           role="button"
           tabIndex={0}
         >
-          {/* <div className="brand__mark" aria-hidden="true">
-            ✦
-          </div> */}
-
-          {/* <div className="brand__mark" aria-hidden="true">
-            <img
-              src={logo}
-              alt="Yentema Art Salon logo"
-              className="brand__logo"
-            />
-          </div> */}
-
           <div className="brand__text">
             <div className="brand__name">Yentema Art Salon</div>
           </div>
