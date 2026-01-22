@@ -5,6 +5,7 @@ import lineupImg from "../assets/gallery/lineup.png";
 import classicImg from "../assets/gallery/classic.png";
 import taperImg from "../assets/gallery/taper.png";
 import classicImgs from "../assets/gallery/classic1.png";
+import logoImg from "../assets/yentema-art-salon-logo.png";
 
 import marcusImg from "../assets/barbers/marcus.jpg";
 import julesImg from "../assets/barbers/jules.png";
@@ -86,8 +87,8 @@ export const SERVICES: Service[] = [
 
 export const BARBERS: Barber[] = [
   {
-    id: "marcus",
-    name: "Luck",
+    id: "LUCK",
+    name: "LUCK",
     title: "",
     image: marcusImg,
     specialty: [
@@ -100,8 +101,8 @@ export const BARBERS: Barber[] = [
     ],
   },
   {
-    id: "jules",
-    name: "Ange De Dieu",
+    id: "ANGE DE DIEU",
+    name: "ANGE DE DIEU",
     title: "",
     image: julesImg,
     specialty: [
@@ -114,8 +115,8 @@ export const BARBERS: Barber[] = [
     ],
   },
   {
-    id: "amina",
-    name: "Roland",
+    id: "ROLAND",
+    name: "ROLAND",
     title: "",
     image: aminaImg,
     specialty: [
@@ -209,6 +210,7 @@ export const GALLERY = [
   { label: "Classic Cut", image: classicImg },
   { label: "Taper Fade", image: taperImg },
   { label: "Classic Cut", image: classicImgs },
+  { label: "Classic Cut", image: logoImg },
 ] as const;
 
 export const STATS = [
