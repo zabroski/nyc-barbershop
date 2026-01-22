@@ -14,6 +14,9 @@ import { GallerySection } from "./sections/GallerySection/GallerySection";
 import { ContactSection } from "./sections/ContactSection/ContactSection";
 import { MoneyTransferSection } from "./sections/MoneyTransferSection/MoneyTransferSection";
 
+// ✅ ADD THIS IMPORT
+import { AppTutorial } from "./components/AppTutorial/AppTutorial";
+
 type BookingSeed = { serviceId?: string; barberId?: string };
 
 export default function App() {
@@ -29,11 +32,19 @@ export default function App() {
 
   return (
     <div className="app app--light">
+      {/* ✅ ADD THIS (place near the top so it sees everything) */}
+      <AppTutorial onOpenBooking={() => openBooking()} />
+
       {/* <Topbar onBook={() => openBooking()} /> */}
-      <Navbar
-        onOpenMenu={() => setNavOpen(true)}
-        onBook={() => openBooking()}
-      />
+
+      {/* ✅ OPTIONAL: wrap Navbar so tutorial can target ".navbar" */}
+      <div className="navbar">
+        <Navbar
+          onOpenMenu={() => setNavOpen(true)}
+          onBook={() => openBooking()}
+        />
+      </div>
+
       <MobileDrawer
         open={navOpen}
         onClose={() => setNavOpen(false)}
@@ -45,7 +56,12 @@ export default function App() {
           onBook={() => openBooking()}
           onBookFade={() => openBooking({ serviceId: "fade" })}
         />
-        <ServicesSection onBook={(serviceId) => openBooking({ serviceId })} />
+
+        {/* ✅ OPTIONAL: wrap ServicesSection so tutorial can target ".servicesSection" */}
+        <div className="servicesSection">
+          <ServicesSection onBook={(serviceId) => openBooking({ serviceId })} />
+        </div>
+
         <BarbersSection
           onBook={(barberId, serviceId) => openBooking({ barberId, serviceId })}
         />
