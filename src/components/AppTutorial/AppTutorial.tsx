@@ -23,7 +23,8 @@ export function AppTutorial({ onOpenBooking }: AppTutorialProps) {
           popover: {
             title: "Navigation",
             description:
-              "Use the menu to explore services, barbers, gallery, and contact.",
+              "Use the menu to explore services, barbers, gallery, and contact moreeeeeeeeee.",
+
             side: "bottom",
             align: "start",
           },
